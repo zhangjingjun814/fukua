@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>浮夸 · 陈奕迅 | 专题网站</title>
+  <meta
+    name="description"
+    content="一个关于陈奕迅《浮夸》的专题网站：梳理歌曲的创作背景、主题解析、奖项与传唱，带交互小测验。"
+  />
+  <meta property="og:title" content="浮夸 · 陈奕迅专题网站" />
+  <meta property="og:description" content="从创作背景到主题解析，读懂这首小人物的呐喊。" />
+  <meta property="og:type" content="website" />
+
+  <!-- 在渲染前确定主题，避免亮/暗切换闪烁 -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+        var theme = saved || (prefersLight ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <nav class="container nav-wrapper" aria-label="主导航">
+      <a class="brand" href="index.html">浮<span>夸</span></a>
+
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" aria-current="page">首页</a></li>
+        <li><a href="about.html">歌曲档案</a></li>
+        <li><a href="analysis.html">主题解析</a></li>
+        <li><a href="impact.html">影响传唱</a></li>
+        <li><a href="contact.html">留言反馈</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-theme-toggle>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" hidden>
+            <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
+          </svg>
+        </button>
+
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle
+          aria-expanded="false" aria-controls="nav-list" aria-label="打开导航菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container">
+      <p class="kicker">陈奕迅 · 粤语经典</p>
+      <h1>浮夸</h1>
+      <p class="subtitle">
+        一首发表于 2005 年的歌，用一个小人物的夸张与不安，
+        唱出了每个普通人渴望被看见的心情。
+      </p>
+      <div>
+        <a class="btn btn--primary" href="about.html">了解创作背景</a>
+        <a class="btn btn--ghost" href="analysis.html">阅读主题解析</a>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>关于这首歌</h2>
+      <p>
+        《浮夸》由黄伟文作词、江志仁（C.Y. Kong）作曲并编曲，
+        收录在陈奕迅 2005 年发行的专辑《U87》中。它以第一人称的视角，
+        讲述一个自觉平凡、甚至被忽略的人，如何用夸张的方式争取注意。
+        歌曲在情绪上层层推进，结尾近乎呐喊的演绎，让它成为许多人心中
+        粤语流行曲的代表之作。
+      </p>
+      <blockquote>
+        “那年十八，母校舞会，站着如喽啰。”
+        <cite>—— 歌词短句引用，《浮夸》</cite>
+      </blockquote>
+
+      <dl class="meta-grid">
+        <div class="meta-item">
+          <dt>发行日期</dt>
+          <dd>2005-06-07</dd>
+        </div>
+        <div class="meta-item">
+          <dt>收录专辑</dt>
+          <dd>《U87》</dd>
+        </div>
+        <div class="meta-item">
+          <dt>语言</dt>
+          <dd>粤语</dd>
+        </div>
+        <div class="meta-item">
+          <dt>作词</dt>
+          <dd>黄伟文</dd>
+        </div>
+        <div class="meta-item">
+          <dt>作曲 / 编曲</dt>
+          <dd>江志仁 C.Y. Kong</dd>
+        </div>
+        <div class="meta-item">
+          <dt>唱片公司</dt>
+          <dd>新艺宝 / 环球</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="section container">
+      <h2>开始探索</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>创作背景</h3>
+          <p>一段写于 2003 年的旋律，如何从悼念之作，变成小人物的故事。</p>
+          <a class="card-link" href="about.html">查看歌曲档案 →</a>
+        </article>
+        <article class="card">
+          <h3>主题解析</h3>
+          <p>“浮夸”为什么是一种自我保护？四个角度读懂歌词与音乐。</p>
+          <a class="card-link" href="analysis.html">阅读解析并测验 →</a>
+        </article>
+        <article class="card">
+          <h3>影响与传唱</h3>
+          <p>它拿下过哪些奖项，又被哪些歌手在舞台上重新演绎。</p>
+          <a class="card-link" href="impact.html">了解奖项与翻唱 →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p><strong>《浮夸》学习专题网站</strong></p>
+        <p>本网站为课程学习项目，非官方粉丝站点，与歌手及唱片公司无关。</p>
+      </div>
+      <div>
+        <p>歌曲与歌词版权归原作者及相关权利人所有。</p>
+        <p>© 2026 学生作业 · 仅供学习使用</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

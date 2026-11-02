@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>歌曲档案 · 浮夸 | 专题网站</title>
+  <meta
+    name="description"
+    content="《浮夸》的基本信息与创作背景：从 2003 年的旋律 Depression 到 2005 年专辑《U87》中的经典。"
+  />
+  <meta property="og:title" content="歌曲档案 · 浮夸" />
+  <meta property="og:description" content="梳理《浮夸》的发行信息与创作时间线。" />
+  <meta property="og:type" content="website" />
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+        var theme = saved || (prefersLight ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <nav class="container nav-wrapper" aria-label="主导航">
+      <a class="brand" href="index.html">浮<span>夸</span></a>
+
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html" aria-current="page">歌曲档案</a></li>
+        <li><a href="analysis.html">主题解析</a></li>
+        <li><a href="impact.html">影响传唱</a></li>
+        <li><a href="contact.html">留言反馈</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-theme-toggle>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" hidden>
+            <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
+          </svg>
+        </button>
+
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle
+          aria-expanded="false" aria-controls="nav-list" aria-label="打开导航菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="page-head container">
+      <p class="kicker">About the Song</p>
+      <h1>歌曲档案</h1>
+      <p>一份关于《浮夸》的基本信息与来龙去脉。</p>
+    </div>
+
+    <section class="section--tight container">
+      <div class="table-wrap">
+        <table>
+          <caption>基本信息</caption>
+          <tbody>
+            <tr><th scope="row">歌曲名称</th><td>浮夸</td></tr>
+            <tr><th scope="row">演唱</th><td>陈奕迅（Eason Chan）</td></tr>
+            <tr><th scope="row">作词</th><td>黄伟文（Wyman Wong）</td></tr>
+            <tr><th scope="row">作曲 / 编曲</th><td>江志仁（C.Y. Kong）</td></tr>
+            <tr><th scope="row">收录专辑</th><td>《U87》</td></tr>
+            <tr><th scope="row">发行日期</th><td>2005 年 6 月 7 日</td></tr>
+            <tr><th scope="row">唱片公司</th><td>新艺宝唱片 / 环球唱片</td></tr>
+            <tr><th scope="row">语言</th><td>粤语</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>创作背景时间线</h2>
+      <ul class="timeline">
+        <li>
+          <time datetime="2003">2003 年</time>
+          <p>
+            张国荣离世后，与他合作过的江志仁写下一段旋律，
+            原名 <em>Depression</em>（抑郁），寄托对逝者的不解，
+            也希望人们留意身边受情绪困扰的人。
+          </p>
+        </li>
+        <li>
+          <time datetime="2003/2005">2003 – 2005 年</time>
+          <p>
+            这段旋律被暂时搁置。陈奕迅曾希望亲自为它填词，
+            但写了多个版本都不满意，最终填词任务交给了黄伟文。
+          </p>
+        </li>
+        <li>
+          <time datetime="2005">2005 年</time>
+          <p>
+            黄伟文没有延续悼念的方向，而是把它写成一个
+            不得志小人物的呐喊，歌名定为《浮夸》。
+          </p>
+        </li>
+        <li>
+          <time datetime="2005-06-07">2005 年 6 月 7 日</time>
+          <p>歌曲随专辑《U87》正式发行，成为专辑中最具代表性的作品之一。</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section container">
+      <h2>三位关键人物</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>陈奕迅</h3>
+          <p>
+            演唱者。他在《浮夸》中从克制的叙述一路推进到情绪爆发，
+            用极具张力的声线塑造出歌中那个不安的小人物。
+          </p>
+        </article>
+        <article class="card">
+          <h3>黄伟文</h3>
+          <p>
+            填词人。他把原本悼念性质的旋律，改写为关于平凡与存在感的故事，
+            让歌曲拥有了更普遍的共鸣。
+          </p>
+        </article>
+        <article class="card">
+          <h3>江志仁 C.Y. Kong</h3>
+          <p>
+            作曲兼编曲人。这段旋律最初写于 2003 年，
+            层层递进的编曲为结尾的情绪高潮铺好了道路。
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p><strong>《浮夸》学习专题网站</strong></p>
+        <p>本网站为课程学习项目，非官方粉丝站点，与歌手及唱片公司无关。</p>
+      </div>
+      <div>
+        <p>歌曲与歌词版权归原作者及相关权利人所有。</p>
+        <p>© 2026 学生作业 · 仅供学习使用</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
