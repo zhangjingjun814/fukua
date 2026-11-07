@@ -1,18 +1,19 @@
 /* =========================================================
-   《浮夸》专题网站 — 全站交互
-   模块：主题切换 / 移动端菜单 / 手风琴 / 小测验 / 表单验证
-   纯原生 JavaScript，无任何框架
+   Exaggerated Feature Site — Site-wide interactions
+   Modules: theme toggle / mobile menu / accordion / quiz / form validation
+   Plain vanilla JavaScript, no frameworks
    ========================================================= */
 
 (function () {
   "use strict";
 
   /* ---------------------------------------------------------
-     1. 主题（亮 / 暗）切换
-     初始主题已由 <head> 中的内联脚本提前设置，避免页面闪烁。
-     这里只负责按钮点击与持久化。
+     1. Theme (light / dark) toggle
+     The initial theme is set early by the inline script in <head>
+     to avoid a flash. Here we only handle the button and persistence.
   --------------------------------------------------------- */
-  // 对 localStorage 的安全封装：隐私模式或不透明 origin 下可能被禁用
+  // Safe wrapper around localStorage: it may be disabled in private
+  // mode or on an opaque origin.
   const safeStorage = {
     get(key) {
       try {
@@ -25,7 +26,7 @@
       try {
         localStorage.setItem(key, value);
       } catch (err) {
-        /* 忽略写入失败，主题仍可在当前会话切换 */
+        /* Ignore write failures; the theme still toggles in this session */
       }
     },
   };
@@ -38,12 +39,12 @@
 
     function syncButton() {
       const isDark = document.documentElement.getAttribute("data-theme") !== "light";
-      // 暗色时显示“太阳”（点击可切到亮色），反之显示月亮
+      // In dark mode show the "sun" (click to go light), otherwise the moon.
       iconSun.hidden = !isDark;
       iconMoon.hidden = isDark;
       themeBtn.setAttribute(
         "aria-label",
-        isDark ? "切换到亮色模式" : "切换到暗色模式"
+        isDark ? "Switch to light mode" : "Switch to dark mode"
       );
     }
 
@@ -59,7 +60,7 @@
   }
 
   /* ---------------------------------------------------------
-     2. 移动端汉堡菜单
+     2. Mobile hamburger menu
   --------------------------------------------------------- */
   const navToggle = document.querySelector("[data-nav-toggle]");
   const navList = document.querySelector(".nav-list");
@@ -70,7 +71,7 @@
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // 点击导航链接后自动收起菜单（移动端体验）
+    // Close the menu after a navigation link is tapped (mobile UX).
     navList.addEventListener("click", (event) => {
       if (event.target.tagName === "A") {
         navList.classList.remove("open");
@@ -80,7 +81,7 @@
   }
 
   /* ---------------------------------------------------------
-     3. 手风琴（主题解析页折叠章节）
+     3. Accordion (collapsible sections on the Analysis page)
   --------------------------------------------------------- */
   document.querySelectorAll(".acc-trigger").forEach((trigger) => {
     trigger.addEventListener("click", () => {
@@ -90,7 +91,7 @@
         trigger.getAttribute("aria-controls")
       );
       if (panel) {
-        // 展开时给面板一个明确高度，收起时归零
+        // Give the panel an explicit height when open, zero when closed.
         panel.style.maxHeight = expanded
           ? "0"
           : panel.scrollHeight + "px";
@@ -99,8 +100,8 @@
   });
 
   /* ---------------------------------------------------------
-     4. “听懂《浮夸》”小测验
-     题目数据驱动渲染，状态保存在 answers 对象中
+     4. "How Well Do You Know Exaggerated" quiz
+     Rendered from data; state is kept in the answers object.
   --------------------------------------------------------- */
   const quizContainer = document.querySelector("[data-quiz]");
 
@@ -108,31 +109,31 @@
     const quizData = [
       {
         id: "q1",
-        question: "《浮夸》的填词人是谁？",
-        options: ["黄伟文", "林夕", "林振强"],
+        question: "Who wrote the lyrics for “Exaggerated”?",
+        options: ["Wyman Wong", "Albert Leung", "Richard Lam"],
         answer: 0,
       },
       {
         id: "q2",
-        question: "这段旋律最初的英文名字叫什么？",
+        question: "What was the original English title of the melody?",
         options: ["Loneliness", "Depression", "The Show"],
         answer: 1,
       },
       {
         id: "q3",
-        question: "《浮夸》收录于陈奕迅的哪张专辑？",
-        options: ["《What's Going On…?》", "《H³M》", "《U87》"],
+        question: "Which Eason Chan album features “Exaggerated”?",
+        options: ["What's Going On…?", "H³M", "U87"],
         answer: 2,
       },
       {
         id: "q4",
-        question: "这首歌的作曲兼编曲人是谁？",
-        options: ["雷颂德", "江志仁（C.Y. Kong）", "陈辉阳"],
+        question: "Who composed and arranged the song?",
+        options: ["Mark Lui", "C.Y. Kong", "Chan Fai-young"],
         answer: 1,
       },
     ];
 
-    // 用状态对象记录每题所选下标
+    // Record the selected index of each question in a state object.
     const answers = {};
 
     function renderQuiz() {
@@ -161,7 +162,7 @@
       quizContainer.innerHTML = `
         ${fieldsets}
         <button type="button" class="btn btn--primary" data-quiz-submit>
-          查看结果
+          See Results
         </button>
         <div class="quiz-result" role="status" aria-live="polite"></div>
       `;
@@ -169,7 +170,7 @@
 
     renderQuiz();
 
-    // 事件委托：监听整份测验内的选择变化
+    // Event delegation: listen for selections across the whole quiz.
     quizContainer.addEventListener("change", (event) => {
       if (event.target.type === "radio") {
         answers[event.target.name] = Number(event.target.value);
@@ -181,10 +182,10 @@
       .addEventListener("click", () => {
         const resultEl = quizContainer.querySelector(".quiz-result");
 
-        // 未答完则提示，不判分
+        // If incomplete, prompt instead of scoring.
         if (Object.keys(answers).length < quizData.length) {
           resultEl.className = "quiz-result show quiz-result--bad";
-          resultEl.textContent = "还有题目没有作答，请完成全部题目。";
+          resultEl.textContent = "Some questions are unanswered. Please answer every question.";
           return;
         }
 
@@ -198,13 +199,13 @@
           "quiz-result show " +
           (passed ? "quiz-result--ok" : "quiz-result--bad");
         resultEl.textContent = passed
-          ? `你答对了 ${score} / ${quizData.length} 题，已经很懂这首歌了！`
-          : `你答对了 ${score} / ${quizData.length} 题，建议回到上面的解析再读一遍。`;
+          ? `You got ${score} / ${quizData.length} right — you already know this song well!`
+          : `You got ${score} / ${quizData.length} right. Try revisiting the analysis above.`;
       });
   }
 
   /* ---------------------------------------------------------
-     5. 联系表单验证（无后端，仅前端校验）
+     5. Contact form validation (no back-end, front-end only)
   --------------------------------------------------------- */
   const form = document.querySelector("[data-contact-form]");
 
@@ -224,18 +225,18 @@
       let message = "";
 
       if (field.name === "name" && value.length < 2) {
-        message = "请输入至少 2 个字符的姓名。";
+        message = "Please enter a name of at least 2 characters.";
       } else if (field.name === "email" && !emailPattern.test(value)) {
-        message = "请输入有效的邮箱地址，例如 name@example.com。";
+        message = "Please enter a valid email address, e.g. name@example.com.";
       } else if (field.name === "message" && value.length < 10) {
-        message = "留言至少需要 10 个字符。";
+        message = "The message needs to be at least 10 characters.";
       }
 
       setError(field, message);
       return !message;
     }
 
-    // 失焦时即时校验，输入时清除错误
+    // Validate on blur, clear errors while typing.
     form.querySelectorAll("input, textarea").forEach((field) => {
       field.addEventListener("blur", () => validateField(field));
       field.addEventListener("input", () => {
@@ -257,12 +258,12 @@
       if (allValid) {
         status.className = "form-status show form-status--ok";
         status.textContent =
-          "感谢你的留言！（这是学习演示，表单不会真正发送邮件）";
+          "Thanks for your message! (This is a learning demo; nothing is actually sent.)";
         form.reset();
       } else {
         status.className = "form-status show";
         status.textContent = "";
-        // 聚焦第一个出错的字段，方便键盘用户
+        // Focus the first invalid field for keyboard users.
         const firstInvalid = form.querySelector('[aria-invalid="true"]');
         if (firstInvalid) firstInvalid.focus();
       }

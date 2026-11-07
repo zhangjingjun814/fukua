@@ -1,9 +1,9 @@
 /* =========================================================
-   《浮夸》专题网站 — 全站样式
-   舞台聚光灯风格，支持亮/暗双主题，移动优先响应式
+   Exaggerated Feature Site — Site-wide styles
+   Stage spotlight look, with light/dark themes and mobile-first layout
    ========================================================= */
 
-/* ---------- 设计令牌：暗色主题（默认，舞台感） ---------- */
+/* ---------- Design tokens: dark theme (default, stage feel) ---------- */
 :root {
   --bg: #0e0e14;
   --surface: #17171f;
@@ -19,15 +19,15 @@
   --spot-glow: rgba(240, 193, 90, 0.22);
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
 
-  --font-serif: Georgia, "Times New Roman", "Songti SC", "STSong", SimSun, serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
 
   --radius: 14px;
   --maxw: 1080px;
 }
 
-/* ---------- 亮色主题 ---------- */
+/* ---------- Light theme ---------- */
 [data-theme="light"] {
   --bg: #f8f5ee;
   --surface: #ffffff;
@@ -44,7 +44,7 @@
   --shadow: 0 12px 28px rgba(60, 45, 10, 0.12);
 }
 
-/* ---------- 基础重置 ---------- */
+/* ---------- Base reset ---------- */
 *,
 *::before,
 *::after {
@@ -107,14 +107,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* 让键盘焦点始终清晰可见（可访问性） */
+/* Keep keyboard focus clearly visible (accessibility) */
 :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* 仅供屏幕阅读器的文本 */
+/* Text intended only for screen readers */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -127,7 +127,7 @@ a:hover {
   border: 0;
 }
 
-/* ---------- 跳过导航链接 ---------- */
+/* ---------- Skip link ---------- */
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -145,7 +145,7 @@ a:hover {
   top: 0;
 }
 
-/* ---------- 布局容器 ---------- */
+/* ---------- Layout container ---------- */
 .container {
   width: min(100% - 2.5rem, var(--maxw));
   margin-inline: auto;
@@ -159,7 +159,7 @@ a:hover {
   padding: 2rem 0;
 }
 
-/* ---------- 页头与导航 ---------- */
+/* ---------- Header and navigation ---------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -222,7 +222,7 @@ a:hover {
   font-weight: 700;
 }
 
-/* 导航栏右侧操作区 */
+/* Action area on the right of the navigation bar */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -251,12 +251,12 @@ a:hover {
   height: 20px;
 }
 
-/* 汉堡按钮：默认隐藏，移动端显示 */
+/* Hamburger button: hidden by default, shown on mobile */
 .nav-toggle {
   display: none;
 }
 
-/* ---------- 英雄区 + 聚光灯 ---------- */
+/* ---------- Hero + spotlight ---------- */
 .hero {
   position: relative;
   overflow: hidden;
@@ -264,7 +264,7 @@ a:hover {
   text-align: center;
 }
 
-/* 聚光灯光晕 */
+/* Spotlight glow */
 .hero::before {
   content: "";
   position: absolute;
@@ -305,7 +305,7 @@ a:hover {
   color: var(--text-muted);
 }
 
-/* 普通页面的页头（非首页） */
+/* Page header for ordinary pages (not the home page) */
 .page-head {
   padding: 3.2rem 0 1.6rem;
   text-align: center;
@@ -318,7 +318,7 @@ a:hover {
   text-transform: uppercase;
 }
 
-/* ---------- 按钮 ---------- */
+/* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.6rem;
@@ -350,7 +350,7 @@ a:hover {
   background: var(--surface-2);
 }
 
-/* ---------- 卡片网格 ---------- */
+/* ---------- Card grid ---------- */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -379,7 +379,7 @@ a:hover {
   font-weight: 700;
 }
 
-/* 首页速览定义网格 */
+/* Definition-list overview grid on the home page */
 .meta-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -407,7 +407,7 @@ a:hover {
   font-size: 1.05rem;
 }
 
-/* ---------- 信息表格 ---------- */
+/* ---------- Information tables ---------- */
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--border);
@@ -441,7 +441,7 @@ th {
   font-weight: 600;
 }
 
-/* ---------- 时间线 ---------- */
+/* ---------- Timeline ---------- */
 .timeline {
   list-style: none;
   margin: 0;
@@ -473,7 +473,7 @@ th {
   font-family: var(--font-serif);
 }
 
-/* ---------- 引用 ---------- */
+/* ---------- Blockquotes ---------- */
 blockquote {
   margin: 1.5rem 0;
   padding: 1rem 1.4rem;
@@ -492,7 +492,7 @@ blockquote cite {
   font-style: normal;
 }
 
-/* ---------- 手风琴 ---------- */
+/* ---------- Accordion ---------- */
 .accordion {
   display: grid;
   gap: 0.8rem;
@@ -541,7 +541,7 @@ blockquote cite {
   padding: 0 1.3rem 1.3rem;
 }
 
-/* ---------- 小测验 ---------- */
+/* ---------- Quiz ---------- */
 .quiz {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -603,7 +603,7 @@ blockquote cite {
   color: var(--danger);
 }
 
-/* ---------- 表单 ---------- */
+/* ---------- Forms ---------- */
 .form {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -678,7 +678,7 @@ blockquote cite {
   color: var(--success);
 }
 
-/* ---------- 页脚 ---------- */
+/* ---------- Footer ---------- */
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--surface);
@@ -699,7 +699,7 @@ blockquote cite {
   margin-bottom: 0.5rem;
 }
 
-/* ---------- 响应式：平板/手机 ---------- */
+/* ---------- Responsive: tablet / phone ---------- */
 @media (max-width: 760px) {
   .nav-toggle {
     display: inline-flex;
@@ -736,7 +736,7 @@ blockquote cite {
   }
 }
 
-/* 用户偏好减少动画时予以尊重 */
+/* Respect the user's preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

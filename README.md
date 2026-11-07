@@ -1,48 +1,49 @@
-# 《浮夸》专题网站
+# Exaggerated — Feature Site
 
-一个关于陈奕迅歌曲《浮夸》的多页专题网站，作为网页开发课程的期末项目。
-纯 HTML / CSS / JavaScript 实现，无框架、无后端、无数据库。
+A multi-page feature site about Eason Chan's song “Exaggerated,” built as the
+final project for a web development course. It uses plain HTML / CSS /
+JavaScript with no frameworks, back-end or database.
 
-## 项目简介
+## Overview
 
-网站围绕《浮夸》的创作背景、主题解析、奖项与传唱展开，
-所有介绍文字均为原创，歌词仅作一两句的短句引用（合理使用），
-不收录完整歌词。
+The site covers the story behind “Exaggerated,” its thematic analysis, awards
+and legacy. All commentary is original, and lyrics appear only as one or two
+short quotes (fair use); no complete lyrics are included.
 
-## 技术栈
+## Tech stack
 
-- **HTML5**：语义化标签、WAI-ARIA、表单与可访问性
-- **CSS3**：自定义属性、盒子模型、Flexbox、Grid、移动优先响应式、亮/暗双主题
-- **JavaScript（ES6+）**：DOM 操作、事件处理、状态管理、localStorage、表单验证
+- **HTML5**: semantic elements, WAI-ARIA, forms and accessibility
+- **CSS3**: custom properties, the box model, Flexbox, Grid, mobile-first layout, light/dark themes
+- **JavaScript (ES6+)**: DOM manipulation, event handling, state management, localStorage, form validation
 
-## 页面结构（共 5 页）
+## Pages (5 in total)
 
-| 文件 | 页面 | 主要内容 |
+| File | Page | Main content |
 |---|---|---|
-| `index.html` | 首页 | 英雄区、歌曲速览、全站入口 |
-| `about.html` | 歌曲档案 | 信息表、创作背景时间线、关键人物 |
-| `analysis.html` | 主题解析 | 手风琴赏析、互动小测验 |
-| `impact.html` | 影响传唱 | 奖项表、翻唱版本、文化影响 |
-| `contact.html` | 留言反馈 | 带无障碍验证的表单 |
+| `index.html` | Home | Hero, quick overview, site-wide entry points |
+| `about.html` | About the Song | Facts table, timeline, key people |
+| `analysis.html` | Analysis | Accordion commentary, interactive quiz |
+| `impact.html` | Impact | Awards table, covers, cultural legacy |
+| `contact.html` | Contact | A form with accessible validation |
 
-## 交互功能
+## Interactive features
 
-1. 亮 / 暗主题切换，使用 `localStorage` 持久化，首次访问跟随系统偏好
-2. 移动端汉堡菜单（`aria-expanded` 状态同步）
-3. 主题解析页手风琴折叠
-4. 数据驱动的小测验（答题状态管理 + 即时反馈）
-5. 联系表单前端验证（邮箱格式、必填项、错误提示与焦点管理）
+1. Light / dark theme toggle, persisted with `localStorage`; first visit follows the system preference
+2. Mobile hamburger menu (with synchronized `aria-expanded` state)
+3. Accordion on the Analysis page
+4. Data-driven quiz (answer state management + instant feedback)
+5. Front-end contact form validation (email format, required fields, error messages and focus management)
 
-## 本地运行
+## Running locally
 
-直接用浏览器打开 `index.html` 即可；或在项目根目录启动一个静态服务器：
+Open `index.html` directly in a browser, or start a static server in the project root:
 
 ```bash
 python3 -m http.server 8000
-# 然后访问 http://localhost:8000
+# then visit http://localhost:8000
 ```
 
-## 文件结构
+## File structure
 
 ```
 fukua-site/
@@ -59,28 +60,28 @@ fukua-site/
 └── README.md
 ```
 
-## Git 提交里程碑
+## Git milestones
 
-提交历史按学期开发节奏组织，体现渐进式开发：
+The commit history is organized to reflect incremental development through the term:
 
-1. 项目规划与 README
-2. 五页 HTML 骨架与导航
-3. 各页原创内容与表单
-4. CSS 设计系统与基础排版
-5. Flexbox / Grid 布局
-6. 响应式适配与移动端菜单
-7. JavaScript 交互
-8. 可访问性、SEO 与测试
-9. 部署上线
+1. Project planning and README
+2. Five-page HTML skeleton and navigation
+3. Original content and forms on each page
+4. CSS design system and base typography
+5. Flexbox / Grid layout
+6. Responsive adaptation and mobile menu
+7. JavaScript interactions
+8. Accessibility, SEO and testing
+9. Deployment
 
-## 部署
+## Deployment
 
-静态站点可直接部署到 GitHub Pages、Netlify 或 Cloudflare Pages，
-无需服务器端运行环境。
+The static site can be deployed directly to GitHub Pages, Netlify or
+Cloudflare Pages, with no server-side runtime required.
 
-## 版权与学术诚信声明
+## Copyright and academic integrity
 
-- 本项目为学生学习作业，是非官方粉丝站点，与陈奕迅、黄伟文、
-  江志仁及相关唱片公司无关。
-- 歌曲、歌词及相关名称的版权归原作者及权利人所有，
-- 站内事实性信息根据公开资料整理，赏析文字为原创。
+- This project is student coursework and an unofficial fan site. It is not
+  affiliated with Eason Chan, Wyman Wong, C.Y. Kong or the related record labels.
+- The song, lyrics and related names belong to their original authors and rights holders.
+- Factual information is compiled from public sources, and the commentary is original.

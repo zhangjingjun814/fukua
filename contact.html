@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>留言反馈 · 浮夸 | 专题网站</title>
+  <title>Contact · Exaggerated | Feature Site</title>
   <meta
     name="description"
-    content="给《浮夸》专题网站留言：前端表单验证演示，无后端、不会真正发送邮件。"
+    content="Leave a message for the Exaggerated feature site: a front-end form validation demo with no back-end, so no email is actually sent."
   />
-  <meta property="og:title" content="留言反馈 · 浮夸" />
-  <meta property="og:description" content="带无障碍验证的联系表单。" />
+  <meta property="og:title" content="Contact · Exaggerated" />
+  <meta property="og:description" content="A contact form with accessible validation." />
   <meta property="og:type" content="website" />
 
   <script>
@@ -28,18 +28,18 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到主要内容</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
-    <nav class="container nav-wrapper" aria-label="主导航">
-      <a class="brand" href="index.html">浮<span>夸</span></a>
+    <nav class="container nav-wrapper" aria-label="Primary">
+      <a class="brand" href="index.html">Exag<span>gerated</span></a>
 
       <ul class="nav-list" id="nav-list">
-        <li><a href="index.html">首页</a></li>
-        <li><a href="about.html">歌曲档案</a></li>
-        <li><a href="analysis.html">主题解析</a></li>
-        <li><a href="impact.html">影响传唱</a></li>
-        <li><a href="contact.html" aria-current="page">留言反馈</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About the Song</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -54,7 +54,7 @@
         </button>
 
         <button class="icon-btn nav-toggle" type="button" data-nav-toggle
-          aria-expanded="false" aria-controls="nav-list" aria-label="打开导航菜单">
+          aria-expanded="false" aria-controls="nav-list" aria-label="Open navigation menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M4 7h16M4 12h16M4 17h16" />
           </svg>
@@ -66,48 +66,49 @@
   <main id="main">
     <div class="page-head container">
       <p class="kicker">Contact</p>
-      <h1>留言反馈</h1>
-      <p>告诉我你对这个网站或这首歌的想法。</p>
+      <h1>Contact &amp; Feedback</h1>
+      <p>Share your thoughts on this site or on the song.</p>
     </div>
 
     <section class="section--tight container">
       <div class="cards">
         <form class="form" data-contact-form novalidate>
           <div class="form-row">
-            <label for="name">姓名</label>
+            <label for="name">Name</label>
             <input type="text" id="name" name="name" autocomplete="name"
               required aria-describedby="name-error" />
             <p class="field-error" id="name-error" aria-live="polite"></p>
           </div>
 
           <div class="form-row">
-            <label for="email">邮箱</label>
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" autocomplete="email"
               required aria-describedby="email-error" />
             <p class="field-error" id="email-error" aria-live="polite"></p>
           </div>
 
           <div class="form-row">
-            <label for="message">留言</label>
+            <label for="message">Message</label>
             <textarea id="message" name="message" required
               aria-describedby="message-error"></textarea>
             <p class="field-error" id="message-error" aria-live="polite"></p>
           </div>
 
-          <button class="btn btn--primary" type="submit">提交留言</button>
+          <button class="btn btn--primary" type="submit">Send Message</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
 
         <div class="card">
-          <h2>说明</h2>
+          <h2>A Note</h2>
           <p>
-            这是一个课程学习项目，表单只在浏览器里做前端验证，
-            <strong>没有后端服务器，也不会真正发送邮件</strong>。
+            This is a coursework project. The form is validated only in the
+            browser; <strong>there is no back-end server and no email is actually
+            sent</strong>.
           </p>
           <p>
-            提交时 JavaScript 会检查姓名、邮箱格式和留言长度，
-            并通过无障碍方式提示错误，这正是课程中
-            “DOM、事件与表单验证”的实践。
+            On submission, JavaScript checks the name, email format and message
+            length, and announces errors accessibly — a practical use of the
+            course's “DOM, events and form validation.”
           </p>
         </div>
       </div>
@@ -117,12 +118,12 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <p><strong>《浮夸》学习专题网站</strong></p>
-        <p>本网站为课程学习项目，非官方粉丝站点，与歌手及唱片公司无关。</p>
+        <p><strong>Exaggerated — Learning Feature Site</strong></p>
+        <p>This site is a coursework project, not an official fan site, and is not affiliated with the artist or record label.</p>
       </div>
       <div>
-        <p>歌曲与歌词版权归原作者及相关权利人所有。</p>
-        <p>© 2026 学生作业 · 仅供学习使用</p>
+        <p>The song and lyrics belong to their original authors and rights holders.</p>
+        <p>© 2026 Student coursework · For learning purposes only</p>
       </div>
     </div>
   </footer>
